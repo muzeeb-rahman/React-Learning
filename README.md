@@ -4,6 +4,10 @@
 - npx parcel index.html - dev build
 - npx parcel build index.html - prod build 
 
+# Start & Build 
+- npm run start
+- npm run build
+
 # Parcel
 - Dev Build
 - Local Server

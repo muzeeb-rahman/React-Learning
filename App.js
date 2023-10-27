@@ -1,33 +1,30 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-{/* 
-<div id="parent">
-  <div id="child">
-    <h1>I'm an H1 tag.</h1>
-    <h2>I'm an H2 tag.</h2>
-  </div>
-</div> 
-*/}
+//JSX - (Transpiled code before it reaches the JS engline) - PARCEL - BABEL
+//JSX => Babel transapiled this into React.createElement() => ReactElement (JS object) => HtmlElement(render)
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I'm an H1 tag."),
-    React.createElement("h2", {}, "I'm an H2 tag."),
-  ])
+//React Element
+const jsxHeading = <h1 className="head">Hello world from React Element!</h1>;
+
+//React Functional Component
+const Title = () => (
+  <h1 className="head">Hello world from React Functional Component!</h1>
 );
 
-const heading = React.createElement(
-  "h1",
-  { id: "heading" },
-  "Hello world from React!"
-);
+const HeadingComponent = () => {
+  return (
+    <div className="container">
+      <div id="reactElement">{jsxHeading}</div>
+      <div id="reactFuncComponent">
+        <Title />
+      </div>
+      <p>React Functional Component!</p>
+    </div>
+  );
+};
 
-console.log(heading);
-console.log(parent);
-
+//
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<HeadingComponent />);
